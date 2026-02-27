@@ -1,159 +1,158 @@
-html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tetris by You</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oriental Clinic | Acupuncture & Natural Healing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { background: #111; color: #fff; font-family: Arial; text-align: center; }
-        canvas { border: 2px solid #fff; background: #000; }
-        #info { margin: 10px; font-size: 20px; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Open Sans',sans-serif; line-height:1.6; color:#333; }
+        h1,h2,h3 { font-family:'Playfair Display',serif; }
+        .container { max-width:1200px; margin:0 auto; padding:0 20px; }
+        header { background:#fff; padding:1rem 0; position:fixed; width:100%; top:0; z-index:100; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+        nav ul { list-style:none; display:flex; justify-content:center; }
+        nav li { margin:0 1rem; }
+        nav a { text-decoration:none; color:#333; font-weight:600; }
+        .logo { font-size:1.5rem; font-weight:700; color:#4CAF50; }
+        .hero { background:url('https://images.unsplash.com/photo-1511699656952-34342bb7c2f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover; height:100vh; display:flex; align-items:center; text-align:center; color:#fff; }
+        .hero-content h1 { font-size:3rem; margin-bottom:1rem; text-shadow:2px 2px 4px rgba(0,0,0,0.5); }
+        .hero-content p { font-size:1.2rem; margin-bottom:2rem; }
+        .btn { background:#4CAF50; color:#fff; padding:1rem 2rem; text-decoration:none; border-radius:5px; font-weight:600; display:inline-block; transition:background 0.3s; }
+        .btn:hover { background:#45a049; }
+        section { padding:5rem 0; }
+        .services { background:#f8f9fa; }
+        .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem; }
+        .service-card { text-align:center; padding:2rem; background:#fff; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
+        .service-icon { font-size:3rem; color:#4CAF50; margin-bottom:1rem; }
+        .about { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
+        .stats { display:flex; justify-content:space-around; margin:2rem 0; }
+        .stat { text-align:center; }
+        .stat i { font-size:2rem; color:#4CAF50; }
+        .testimonials { background:#4CAF50; color:#fff; text-align:center; }
+        .testimonial { font-style:italic; font-size:1.2rem; margin:1rem 0; max-width:600px; margin:0 auto; }
+        .contact form { max-width:500px; margin:0 auto 2rem; }
+        input,textarea { width:100%; padding:1rem; margin:0.5rem 0; border:1px solid #ddd; border-radius:5px; }
+        footer { background:#333; color:#fff; text-align:center; padding:2rem; }
+        @media (max-width:768px) { .about { grid-template-columns:1fr; } .hero-content h1 { font-size:2rem; } }
     </style>
 </head>
 <body>
-    <h1>My Java-Inspired Tetris!</h1>
-    <div id="info">
-        Score: <span id="score">0</span> | Level: <span id="level">1</span>
-        <br>← → ↓: Move | ↑: Rotate | Space: Hard Drop
-    </div>
-    <canvas id="canvas" width="300" height="600"></canvas>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Oriental Clinic</div>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact" class="btn" style="padding:0.5rem 1rem; font-size:0.9rem;">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content container">
+            <h1>Discover Natural Healing</h1>
+            <p>Ancient Oriental Medicine for Modern Wellness. Acupuncture, Herbs & More.</p>
+            <a href="#contact" class="btn">Book Appointment</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 style="text-align:center; margin-bottom:3rem;">Our Signature Treatments</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-needle service-icon"></i>
+                    <h3>Acupuncture</h3>
+                    <p>Relieve pain, stress & fatigue naturally.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-leaf service-icon"></i>
+                    <h3>Herbal Medicine</h3>
+                    <p>Custom blends for immunity & vitality.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-spa service-icon"></i>
+                    <h3>Cupping Therapy</h3>
+                    <p>Detox & soothe muscles.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-user-md service-icon"></i>
+                    <h3>Consultations</h3>
+                    <p>Personalized wellness plans.</p>
+                    <a href="#contact" class="btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="about">
+                <img src="https://images.unsplash.com/photo-1576091160399-1d65ec460aa5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Clinic Interior" style="width:100%; border-radius:10px;">
+                <div>
+                    <h2>Why Oriental Clinic?</h2>
+                    <p>Blending 2,000+ years of tradition with modern care. Licensed experts treat pain, anxiety & more.</p>
+                    <div class="stats">
+                        <div class="stat"><i class="fas fa-users"></i><br>500+ Patients</div>
+                        <div class="stat"><i class="fas fa-star"></i><br>95% Satisfaction</div>
+                        <div class="stat"><i class="fas fa-certificate"></i><br>Certified</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>Patient Stories</h2>
+            <div class="testimonial">"Acupuncture ended my chronic pain!" – Sarah L.</div>
+            <div class="testimonial">"Herbs transformed my health." – John D.</div>
+            <div class="testimonial">"Caring team, real results." – Emily K.</div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 style="text-align:center;">Get in Touch</h2>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST"> <!-- Replace with Formspree free key -->
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone">
+                <textarea name="message" rows="5" placeholder="Message" required></textarea>
+                <button type="submit" class="btn" style="width:100%;">Send Message</button>
+            </form>
+            <div style="text-align:center; margin-top:2rem;">
+                <p><i class="fas fa-map-marker-alt"></i> 123 Wellness St, Your City, CA 12345</p>
+                <p><i class="fas fa-phone"></i> +1-555-123-4567 | <i class="fas fa-envelope"></i> info@orientalclinic.com</p>
+                <p>Mon-Fri 9AM-7PM | Sat 10AM-4PM</p>
+                <!-- Embed Google Map: <iframe src="YOUR_MAP_LINK" width="100%" height="300"></iframe> -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Oriental Clinic. All rights reserved. | <a href="#" style="color:#ccc;">Privacy</a></p>
+            <div><i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i></div>
+        </div>
+    </footer>
+
     <script>
-        const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
-        const BLOCK_SIZE = 30;
-        const COLS = 10;
-        const ROWS = 20;
-        let board = Array(ROWS).fill().map(() => Array(COLS).fill(0));
-        let score = 0;
-        let level = 1;
-        let dropTime = 0;
-        let dropInterval = 1000;
-
-        const PIECES = [
-            [[1,1,1,1]], // I
-            [[1,1],[1,1]], // O
-            [[1,1,1],[0,1,0]], // T
-            [[0,1,1],[1,1,0]], // S
-            [[1,1,0],[0,1,1]], // Z
-            [[1,1,1],[1,0,0]], // J
-            [[1,1,1],[0,0,1]]  // L
-        ];
-
-        let currentPiece = { shape: PIECES[Math.floor(Math.random()*7)], x: 3, y: 0, rot: 0 };
-        let nextPiece = { shape: PIECES[Math.floor(Math.random()*7)] };
-
-        function rotate(piece) {
-            const rotated = piece.shape[0].map((_, i) => piece.shape.map(row => row[i]).reverse());
-            return { ...piece, shape: rotated, rot: (piece.rot + 1) % 4 };
-        }
-
-        function validMove(piece, dx=0, dy=0, newShape=null) {
-            const shape = newShape || piece.shape;
-            for (let y = 0; y < shape.length; y++) {
-                for (let x = 0; x < shape[y].length; x++) {
-                    if (shape[y][x]) {
-                        const newX = piece.x + x + dx;
-                        const newY = piece.y + y + dy;
-                        if (newX < 0 || newX >= COLS || newY >= ROWS || (newY >= 0 && board[newY][newX])) {
-                            return false;
-                        }
-                    }
-                }
-            }
-            return true;
-        }
-
-        function placePiece() {
-            for (let y = 0; y < currentPiece.shape.length; y++) {
-                for (let x = 0; x < currentPiece.shape[y].length; x++) {
-                    if (currentPiece.shape[y][x]) {
-                        board[currentPiece.y + y][currentPiece.x + x] = 1;
-                    }
-                }
-            }
-            clearLines();
-            currentPiece = { ...nextPiece, x: 3, y: 0, rot: 0 };
-            nextPiece = { shape: PIECES[Math.floor(Math.random()*7)] };
-            if (!validMove(currentPiece)) {
-                alert('Game Over! Score: ' + score);
-                board = Array(ROWS).fill().map(() => Array(COLS).fill(0));
-                score = 0;
-                level = 1;
-            }
-        }
-
-        function clearLines() {
-            for (let y = ROWS - 1; y >= 0; y--) {
-                if (board[y].every(cell => cell)) {
-                    board.splice(y, 1);
-                    board.unshift(Array(COLS).fill(0));
-                    score += 100 * level;
-                    level = Math.floor(score / 1000) + 1;
-                    dropInterval = Math.max(50, 1000 - level * 50);
-                    y++; // Re-check this row
-                }
-            }
-            document.getElementById('score').textContent = score;
-            document.getElementById('level').textContent = level;
-        }
-
-        function drawBoard() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            // Draw board
-            for (let y = 0; y < ROWS; y++) {
-                for (let x = 0; x < COLS; x++) {
-                    if (board[y][x]) {
-                        ctx.fillStyle = '#0f0';
-                        ctx.fillRect(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE);
-                        ctx.strokeStyle = '#000';
-                        ctx.strokeRect(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE);
-                    }
-                }
-            }
-            // Draw current piece
-            ctx.fillStyle = '#ff0';
-            for (let y = 0; y < currentPiece.shape.length; y++) {
-                for (let x = 0; x < currentPiece.shape[y].length; x++) {
-                    if (currentPiece.shape[y][x]) {
-                        ctx.fillRect((currentPiece.x + x) * BLOCK_SIZE, (currentPiece.y + y) * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE);
-                        ctx.strokeStyle = '#000';
-                        ctx.strokeRect((currentPiece.x + x) * BLOCK_SIZE, (currentPiece.y + y) * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE);
-                    }
-                }
-            }
-        }
-
-        function update(time = 0) {
-            const deltaTime = time - dropTime;
-            if (deltaTime > dropInterval) {
-                if (validMove(currentPiece, 0, 1)) {
-                    currentPiece.y++;
-                } else {
-                    placePiece();
-                }
-                dropTime = time;
-            }
-            drawBoard();
-            requestAnimationFrame(update);
-        }
-
-        document.addEventListener('keydown', e => {
-            switch(e.key) {
-                case 'ArrowLeft': if (validMove(currentPiece, -1)) currentPiece.x--; break;
-                case 'ArrowRight': if (validMove(currentPiece, 1)) currentPiece.x++; break;
-                case 'ArrowDown': if (validMove(currentPiece, 0, 1)) currentPiece.y++; break;
-                case 'ArrowUp':
-                    const rotated = rotate(currentPiece);
-                    if (validMove(currentPiece, 0, 0, rotated.shape)) currentPiece = rotated;
-                    break;
-                case ' ': // Hard drop
-                    while (validMove(currentPiece, 0, 1)) currentPiece.y++;
-                    placePiece();
-                    break;
-            }
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault(); document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
         });
-
-        update();
     </script>
 </body>
 </html>
